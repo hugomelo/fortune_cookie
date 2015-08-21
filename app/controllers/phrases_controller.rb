@@ -5,16 +5,18 @@ class PhrasesController < ApplicationController
   end
 
   def create
-    @phrase = Phrase.new(phrase_params[:phrase])
+    @phrase = Phrase.new(phrase_params)
 
     respond_to do |format|
       if @phrase.save
         flash[:notice] = 'Phrase was successfully created.'
+      else
+        flash[:alert] = 'Sorry.. Had a problem saving your phrase. Please try again.'
       end
       format.html { redirect_to(action: :index) }
     end
   end
   def phrase_params
-    params.permit(:phrase)
+    params.require(:phrase).permit(:phrase)
   end
 end
