@@ -12,6 +12,7 @@ class PhraseTest < ActiveSupport::TestCase
       Phrase.create(phrase: "phrase_#{n}")
     end
 
+    # it should be enough to have 3 times different ids but it's still possible to find same id
     phrase = Phrase.random
     3.times do
       assert phrase.id != Phrase.random.id
