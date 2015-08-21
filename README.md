@@ -8,14 +8,16 @@ Running it
 
 Cd into the fortune_cookie code directory and:
 
-# bundle install
+```
+bundle install
 
-# rake db:migrate # using sqlite3
+rake db:migrate # using sqlite3
 
-# rails server
+rails s
+```
 
 Point your browser to
-http://localhost:3000
+[http://localhost:3000](http://localhost:3000)
 
 and start registering phrases
 
