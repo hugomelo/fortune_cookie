@@ -5,5 +5,5 @@ one:
   phrase: MyText
 
 two:
-  id: 1
-  phrase: MyText
+  id: 2
+  phrase: AnotherText
