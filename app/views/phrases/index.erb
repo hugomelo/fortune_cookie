@@ -1,1 +1,16 @@
-<%= @phrase.to_yaml %>
+<% unless notice.blank? %>
+  <p class="notice"><%= notice %></p>
+  <script type="text/javascript">$('.notice').delay(2000).fadeOut('slow');</script>
+<% end %>
+<% unless alert.blank? %>
+  <p class="alert"><%= alert %></p>
+<% end %>
+
+<div id=phrases>
+  <%= form_for @phrase do |f| %>
+    <%= f.label "Register a new fortune phrase" %>
+    <%= f.text_field :phrase, placeholder: "fortune phrase" %>
+    <%= f.submit "Save it" %>
+  <% end %>
+</div>
+
